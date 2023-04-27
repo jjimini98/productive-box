@@ -18,19 +18,3 @@ jobs:
 
 
 
-name: Update gist
-on:
-  repository_dispatch:
-    types: [build-event]
-  schedule:
-    - cron: "0 0 * * *"
-jobs:
-  update-gist:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Update gist
-        uses: maxam2017/productive-box@master
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: 58ec33db882541c78bc8a7b1360d1b0d
-          TIMEZONE: Asia/Seoul
